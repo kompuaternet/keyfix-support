@@ -1,15 +1,319 @@
 <!DOCTYPE html>
-<html>
-<head><meta charset="utf-8"><title>KeyFix Support</title></head>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KeyFix – Support</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            background: #0f1117;
+            color: #e8eaf6;
+            line-height: 1.7;
+        }
+
+        header {
+            background: linear-gradient(135deg, #1a2340 0%, #0f1117 100%);
+            padding: 60px 20px;
+            text-align: center;
+            border-bottom: 1px solid #1e2a45;
+        }
+
+        .icon {
+            width: 90px;
+            height: 90px;
+            background: linear-gradient(145deg, #1e2e50, #131c35);
+            border-radius: 22px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 48px;
+            margin-bottom: 20px;
+            box-shadow: 0 8px 32px rgba(0,0,0,0.4);
+        }
+
+        header h1 {
+            font-size: 2.6em;
+            font-weight: 700;
+            letter-spacing: -0.5px;
+        }
+
+        header p {
+            margin-top: 10px;
+            color: #8892b0;
+            font-size: 1.1em;
+        }
+
+        .container {
+            max-width: 780px;
+            margin: 0 auto;
+            padding: 50px 20px;
+        }
+
+        .section {
+            margin-bottom: 50px;
+        }
+
+        .section h2 {
+            font-size: 1.5em;
+            font-weight: 600;
+            margin-bottom: 24px;
+            color: #cdd9f5;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .section h2 .num {
+            background: #1e3a8a;
+            color: #93c5fd;
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.85em;
+            font-weight: 700;
+            flex-shrink: 0;
+        }
+
+        .card {
+            background: #161b2e;
+            border: 1px solid #1e2a45;
+            border-radius: 16px;
+            padding: 28px;
+        }
+
+        .step {
+            display: flex;
+            gap: 18px;
+            padding: 18px 0;
+            border-bottom: 1px solid #1e2a45;
+        }
+
+        .step:last-child {
+            border-bottom: none;
+            padding-bottom: 0;
+        }
+
+        .step:first-child {
+            padding-top: 0;
+        }
+
+        .step-icon {
+            font-size: 1.6em;
+            width: 42px;
+            flex-shrink: 0;
+            text-align: center;
+            padding-top: 2px;
+        }
+
+        .step-text h3 {
+            font-size: 1em;
+            font-weight: 600;
+            color: #e2e8f0;
+            margin-bottom: 4px;
+        }
+
+        .step-text p {
+            font-size: 0.92em;
+            color: #8892b0;
+        }
+
+        .tip {
+            background: #0d2137;
+            border: 1px solid #1e3a5f;
+            border-left: 4px solid #3b82f6;
+            border-radius: 10px;
+            padding: 16px 20px;
+            margin-top: 16px;
+            font-size: 0.9em;
+            color: #93c5fd;
+        }
+
+        .shortcut-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 14px;
+        }
+
+        @media (max-width: 500px) {
+            .shortcut-grid { grid-template-columns: 1fr; }
+        }
+
+        .shortcut-card {
+            background: #1a2340;
+            border: 1px solid #1e2a45;
+            border-radius: 12px;
+            padding: 18px;
+            text-align: center;
+        }
+
+        .shortcut-card .keys {
+            font-size: 1.4em;
+            font-weight: 700;
+            color: #60a5fa;
+            letter-spacing: 1px;
+            margin-bottom: 6px;
+        }
+
+        .shortcut-card .label {
+            font-size: 0.82em;
+            color: #64748b;
+        }
+
+        .faq-item {
+            padding: 18px 0;
+            border-bottom: 1px solid #1e2a45;
+        }
+
+        .faq-item:last-child { border-bottom: none; }
+        .faq-item:first-child { padding-top: 0; }
+
+        .faq-item h3 {
+            font-size: 0.95em;
+            color: #c7d2fe;
+            margin-bottom: 6px;
+        }
+
+        .faq-item p {
+            font-size: 0.88em;
+            color: #64748b;
+        }
+
+        footer {
+            text-align: center;
+            padding: 40px 20px;
+            color: #374151;
+            font-size: 0.85em;
+            border-top: 1px solid #1e2a45;
+        }
+
+        footer a { color: #3b82f6; text-decoration: none; }
+    </style>
+</head>
 <body>
-<h1>KeyFix Support</h1>
-<p>KeyFix is a macOS menu bar app that fixes text typed in the wrong keyboard layout.</p>
-<h2>How to use</h2>
-<p>Type text, then press ⌥ Option twice to convert it to the correct layout.</p>
-<h2>Contact</h2>
-<p>Email: kompua@gmail.com</p>
-<h2>Privacy Policy</h2>
-<p>KeyFix does not collect, store, or transmit any personal data or keystrokes. 
-All processing happens locally on your device.</p>
+
+<header>
+    <div class="icon">⇄</div>
+    <h1>KeyFix</h1>
+    <p>Keyboard layout converter for macOS</p>
+</header>
+
+<div class="container">
+
+    <!-- INSTALL -->
+    <div class="section">
+        <h2><span class="num">1</span> Installation</h2>
+        <div class="card">
+            <div class="step">
+                <div class="step-icon">⬇️</div>
+                <div class="step-text">
+                    <h3>Download from the Mac App Store</h3>
+                    <p>Find KeyFix in the Mac App Store and click Get / Buy.</p>
+                </div>
+            </div>
+            <div class="step">
+                <div class="step-icon">🚀</div>
+                <div class="step-text">
+                    <h3>Launch the app</h3>
+                    <p>Open KeyFix from Launchpad or Applications folder. A ⇄ icon will appear in your menu bar.</p>
+                </div>
+            </div>
+            <div class="step">
+                <div class="step-icon">♿</div>
+                <div class="step-text">
+                    <h3>Grant Accessibility permission</h3>
+                    <p>macOS will ask to allow KeyFix in System Settings → Privacy & Security → Accessibility. Click the toggle to enable it.</p>
+                </div>
+            </div>
+            <div class="step">
+                <div class="step-icon">✅</div>
+                <div class="step-text">
+                    <h3>Ready to use</h3>
+                    <p>KeyFix is now running in the background. No further setup needed.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- HOW TO USE -->
+    <div class="section">
+        <h2><span class="num">2</span> How to use</h2>
+        <div class="card">
+            <div class="step">
+                <div class="step-icon">⌨️</div>
+                <div class="step-text">
+                    <h3>Type in the wrong layout</h3>
+                    <p>Accidentally typed in Russian when you meant English (or vice versa)? No problem.</p>
+                </div>
+            </div>
+            <div class="step">
+                <div class="step-icon">⌥</div>
+                <div class="step-text">
+                    <h3>Press the hotkey</h3>
+                    <p>Use the keyboard shortcut to instantly convert the selected text or the last typed word to the correct layout.</p>
+                </div>
+            </div>
+            <div class="step">
+                <div class="step-icon">✨</div>
+                <div class="step-text">
+                    <h3>Text is converted automatically</h3>
+                    <p>KeyFix replaces the mistyped text with the correct version in place — works in any app.</p>
+                </div>
+            </div>
+        </div>
+        <div class="tip">
+            💡 <strong>Tip:</strong> You can customize the hotkey in KeyFix settings — click the ⇄ icon in the menu bar → Settings.
+        </div>
+    </div>
+
+    <!-- SHORTCUTS -->
+    <div class="section">
+        <h2><span class="num">3</span> Default shortcuts</h2>
+        <div class="shortcut-grid">
+            <div class="shortcut-card">
+                <div class="keys">⌥ Space</div>
+                <div class="label">Convert last typed word</div>
+            </div>
+            <div class="shortcut-card">
+                <div class="keys">⌥ ⇧ Space</div>
+                <div class="label">Convert selected text</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- FAQ -->
+    <div class="section">
+        <h2><span class="num">4</span> FAQ</h2>
+        <div class="card">
+            <div class="faq-item">
+                <h3>KeyFix is not converting text</h3>
+                <p>Make sure Accessibility permission is granted in System Settings → Privacy & Security → Accessibility.</p>
+            </div>
+            <div class="faq-item">
+                <h3>The app doesn't appear in the menu bar</h3>
+                <p>Try relaunching KeyFix from the Applications folder. If your menu bar is full, some icons may be hidden — check with Bartender or similar tools.</p>
+            </div>
+            <div class="faq-item">
+                <h3>How do I quit KeyFix?</h3>
+                <p>Click the ⇄ icon in the menu bar → Quit KeyFix.</p>
+            </div>
+            <div class="faq-item">
+                <h3>Does KeyFix collect any data?</h3>
+                <p>No. KeyFix processes everything locally on your Mac. No data is ever sent anywhere. See our <a href="privacy.html" style="color:#3b82f6;">Privacy Policy</a>.</p>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<footer>
+    <p>© 2025 KeyFix &nbsp;·&nbsp; <a href="privacy.html">Privacy Policy</a></p>
+</footer>
+
 </body>
 </html>
