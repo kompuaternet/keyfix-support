@@ -22,8 +22,7 @@
         }
 
         .icon {
-            width: 90px;
-            height: 90px;
+            width: 90px; height: 90px;
             background: linear-gradient(145deg, #1e2e50, #131c35);
             border-radius: 22px;
             display: inline-flex;
@@ -34,43 +33,26 @@
             box-shadow: 0 8px 32px rgba(0,0,0,0.4);
         }
 
-        header h1 {
-            font-size: 2.6em;
+        header h1 { font-size: 2.6em; font-weight: 700; }
+        header p { margin-top: 10px; color: #8892b0; font-size: 1.1em; }
+
+        .container { max-width: 800px; margin: 0 auto; padding: 50px 20px; }
+        .section { margin-bottom: 56px; }
+
+        .section-title {
+            font-size: 1.4em;
             font-weight: 700;
-            letter-spacing: -0.5px;
-        }
-
-        header p {
-            margin-top: 10px;
-            color: #8892b0;
-            font-size: 1.1em;
-        }
-
-        .container {
-            max-width: 780px;
-            margin: 0 auto;
-            padding: 50px 20px;
-        }
-
-        .section {
-            margin-bottom: 50px;
-        }
-
-        .section h2 {
-            font-size: 1.5em;
-            font-weight: 600;
-            margin-bottom: 24px;
             color: #cdd9f5;
+            margin-bottom: 20px;
             display: flex;
             align-items: center;
-            gap: 10px;
+            gap: 12px;
         }
 
-        .section h2 .num {
+        .section-title .badge {
             background: #1e3a8a;
             color: #93c5fd;
-            width: 32px;
-            height: 32px;
+            width: 34px; height: 34px;
             border-radius: 50%;
             display: inline-flex;
             align-items: center;
@@ -84,101 +66,188 @@
             background: #161b2e;
             border: 1px solid #1e2a45;
             border-radius: 16px;
-            padding: 28px;
+            overflow: hidden;
         }
 
         .step {
             display: flex;
             gap: 18px;
-            padding: 18px 0;
+            padding: 22px 24px;
+            border-bottom: 1px solid #1e2a45;
+        }
+        .step:last-child { border-bottom: none; }
+
+        .step-num {
+            width: 28px; height: 28px;
+            border-radius: 50%;
+            background: #1e2a45;
+            color: #60a5fa;
+            display: flex; align-items: center; justify-content: center;
+            font-size: 0.82em; font-weight: 700;
+            flex-shrink: 0; margin-top: 2px;
+        }
+
+        .step-body h3 { font-size: 1em; font-weight: 600; color: #e2e8f0; margin-bottom: 5px; }
+        .step-body p { font-size: 0.9em; color: #8892b0; }
+        .step-body code {
+            background: #1e2a45;
+            color: #93c5fd;
+            padding: 2px 7px;
+            border-radius: 5px;
+            font-family: monospace;
+            font-size: 0.92em;
+        }
+
+        /* Permission blocks */
+        .perm-block {
+            background: #161b2e;
+            border: 1px solid #1e2a45;
+            border-radius: 16px;
+            overflow: hidden;
+            margin-bottom: 20px;
+        }
+
+        .perm-header {
+            padding: 20px 24px 16px;
             border-bottom: 1px solid #1e2a45;
         }
 
-        .step:last-child {
-            border-bottom: none;
-            padding-bottom: 0;
-        }
-
-        .step:first-child {
-            padding-top: 0;
-        }
-
-        .step-icon {
-            font-size: 1.6em;
-            width: 42px;
-            flex-shrink: 0;
-            text-align: center;
-            padding-top: 2px;
-        }
-
-        .step-text h3 {
-            font-size: 1em;
-            font-weight: 600;
+        .perm-header .perm-title {
+            font-size: 1.05em;
+            font-weight: 700;
             color: #e2e8f0;
-            margin-bottom: 4px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 6px;
         }
 
-        .step-text p {
-            font-size: 0.92em;
-            color: #8892b0;
+        .perm-header .perm-title .pnum {
+            background: #dc2626;
+            color: #fff;
+            font-size: 0.78em;
+            font-weight: 700;
+            padding: 2px 8px;
+            border-radius: 20px;
         }
 
+        .perm-header p { font-size: 0.88em; color: #8892b0; }
+
+        .perm-path {
+            padding: 14px 24px;
+            background: #0d1525;
+            border-bottom: 1px solid #1e2a45;
+            font-size: 0.88em;
+            color: #60a5fa;
+            font-family: monospace;
+            letter-spacing: 0.3px;
+        }
+
+        .perm-steps { padding: 18px 24px; }
+
+        .perm-step {
+            display: flex;
+            gap: 12px;
+            margin-bottom: 12px;
+        }
+        .perm-step:last-child { margin-bottom: 0; }
+
+        .perm-step .dot {
+            width: 22px; height: 22px;
+            border-radius: 50%;
+            background: #1e2a45;
+            color: #60a5fa;
+            font-size: 0.75em;
+            font-weight: 700;
+            display: flex; align-items: center; justify-content: center;
+            flex-shrink: 0; margin-top: 1px;
+        }
+
+        .perm-step p { font-size: 0.88em; color: #94a3b8; }
+        .perm-step p strong { color: #e2e8f0; }
+
+        .screenshot-placeholder {
+            margin: 14px 24px 18px;
+            background: #0d1525;
+            border: 2px dashed #1e2a45;
+            border-radius: 10px;
+            height: 160px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #374151;
+            font-size: 0.82em;
+            text-align: center;
+        }
+
+        /* Warning / tip boxes */
         .tip {
+            display: flex;
+            gap: 14px;
             background: #0d2137;
             border: 1px solid #1e3a5f;
             border-left: 4px solid #3b82f6;
             border-radius: 10px;
             padding: 16px 20px;
             margin-top: 16px;
-            font-size: 0.9em;
+            font-size: 0.88em;
             color: #93c5fd;
         }
 
-        .shortcut-grid {
-            display: grid;
-            grid-template-columns: 1fr;
+        .warn {
+            display: flex;
             gap: 14px;
+            background: #1c1200;
+            border: 1px solid #3d2a00;
+            border-left: 4px solid #f59e0b;
+            border-radius: 10px;
+            padding: 16px 20px;
+            margin-top: 16px;
+            font-size: 0.88em;
+            color: #fbbf24;
         }
 
-        .shortcut-card {
-            background: #1a2340;
+        .warn p, .tip p { margin: 0; line-height: 1.6; }
+
+        /* Hotkey display */
+        .hotkey-demo {
+            background: #161b2e;
             border: 1px solid #1e2a45;
-            border-radius: 12px;
-            padding: 22px;
+            border-radius: 16px;
+            padding: 32px;
             text-align: center;
         }
 
-        .shortcut-card .keys {
-            font-size: 1.6em;
+        .hotkey-keys {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 14px;
+        }
+
+        .key {
+            background: linear-gradient(180deg, #2a3550 0%, #1a2340 100%);
+            border: 1px solid #3b4f70;
+            border-bottom: 3px solid #0d1525;
+            border-radius: 8px;
+            padding: 10px 20px;
+            font-size: 1.3em;
             font-weight: 700;
             color: #60a5fa;
-            letter-spacing: 4px;
-            margin-bottom: 8px;
+            letter-spacing: 0.5px;
         }
 
-        .shortcut-card .label {
-            font-size: 0.88em;
-            color: #64748b;
-        }
+        .hotkey-demo p { color: #64748b; font-size: 0.9em; }
 
+        /* FAQ */
         .faq-item {
-            padding: 18px 0;
+            padding: 20px 24px;
             border-bottom: 1px solid #1e2a45;
         }
-
         .faq-item:last-child { border-bottom: none; }
-        .faq-item:first-child { padding-top: 0; }
-
-        .faq-item h3 {
-            font-size: 0.95em;
-            color: #c7d2fe;
-            margin-bottom: 6px;
-        }
-
-        .faq-item p {
-            font-size: 0.88em;
-            color: #64748b;
-        }
+        .faq-item h3 { font-size: 0.95em; color: #c7d2fe; margin-bottom: 6px; }
+        .faq-item p { font-size: 0.88em; color: #64748b; }
+        .faq-item a { color: #3b82f6; text-decoration: none; }
 
         footer {
             text-align: center;
@@ -187,7 +256,6 @@
             font-size: 0.85em;
             border-top: 1px solid #1e2a45;
         }
-
         footer a { color: #3b82f6; text-decoration: none; }
     </style>
 </head>
@@ -201,106 +269,224 @@
 
 <div class="container">
 
-    <!-- INSTALL -->
+    <!-- ── 1. INSTALLATION ─────────────────────────────────── -->
     <div class="section">
-        <h2><span class="num">1</span> Installation</h2>
+        <div class="section-title"><span class="badge">1</span> Installation</div>
         <div class="card">
             <div class="step">
-                <div class="step-icon">⬇️</div>
-                <div class="step-text">
-                    <h3>Download from the Mac App Store</h3>
-                    <p>Find KeyFix in the Mac App Store and click Get / Buy.</p>
+                <div class="step-num">1</div>
+                <div class="step-body">
+                    <h3>Download KeyFix from the Mac App Store</h3>
+                    <p>Find KeyFix and click <strong>Get</strong> or <strong>Buy</strong>.</p>
                 </div>
             </div>
             <div class="step">
-                <div class="step-icon">🚀</div>
-                <div class="step-text">
-                    <h3>Launch the app</h3>
-                    <p>Open KeyFix from Launchpad or Applications folder. A ⇄ icon will appear in your menu bar.</p>
+                <div class="step-num">2</div>
+                <div class="step-body">
+                    <h3>Open the app</h3>
+                    <p>Launch KeyFix from Launchpad or your Applications folder. A <strong>⇄</strong> icon will appear in the menu bar at the top of your screen.</p>
                 </div>
             </div>
             <div class="step">
-                <div class="step-icon">♿</div>
-                <div class="step-text">
-                    <h3>Grant Accessibility permission</h3>
-                    <p>macOS will ask to allow KeyFix in System Settings → Privacy & Security → Accessibility. Click the toggle to enable it.</p>
-                </div>
-            </div>
-            <div class="step">
-                <div class="step-icon">✅</div>
-                <div class="step-text">
-                    <h3>Ready to use</h3>
-                    <p>KeyFix is now running in the background. No further setup needed.</p>
+                <div class="step-num">3</div>
+                <div class="step-body">
+                    <h3>Grant two required permissions</h3>
+                    <p>KeyFix needs exactly two permissions to work. Without both — it will not function. Follow the steps below carefully.</p>
                 </div>
             </div>
         </div>
     </div>
 
-    <!-- HOW TO USE -->
+    <!-- ── 2. PERMISSIONS ──────────────────────────────────── -->
     <div class="section">
-        <h2><span class="num">2</span> How to use</h2>
-        <div class="card">
-            <div class="step">
-                <div class="step-icon">⌨️</div>
-                <div class="step-text">
-                    <h3>Type in the wrong layout</h3>
-                    <p>Accidentally typed in Russian when you meant English (or vice versa)? No problem.</p>
+        <div class="section-title"><span class="badge">2</span> Required Permissions</div>
+
+        <p style="color:#64748b; font-size:0.9em; margin-bottom:20px;">
+            KeyFix requires <strong style="color:#e2e8f0;">two</strong> permissions in macOS System Settings.
+            Both must be enabled — if either is missing, the app will not work.
+        </p>
+
+        <!-- Permission 1 -->
+        <div class="perm-block">
+            <div class="perm-header">
+                <div class="perm-title">
+                    <span class="pnum">Permission 1 of 2</span>
+                    Accessibility
+                </div>
+                <p>Allows KeyFix to automatically delete the mistyped text and type the corrected version.</p>
+            </div>
+            <div class="perm-path">
+                ⚙️ System Settings → Privacy &amp; Security → Accessibility
+            </div>
+            <div class="perm-steps">
+                <div class="perm-step">
+                    <div class="dot">1</div>
+                    <p>Open <strong>System Settings</strong> (Apple menu  → System Settings)</p>
+                </div>
+                <div class="perm-step">
+                    <div class="dot">2</div>
+                    <p>Click <strong>Privacy &amp; Security</strong> in the left sidebar</p>
+                </div>
+                <div class="perm-step">
+                    <div class="dot">3</div>
+                    <p>Scroll down and click <strong>Accessibility</strong></p>
+                </div>
+                <div class="perm-step">
+                    <div class="dot">4</div>
+                    <p>Find <strong>KeyFix</strong> in the list and turn the toggle <strong>ON</strong> (blue)</p>
+                </div>
+                <div class="perm-step">
+                    <div class="dot">5</div>
+                    <p>macOS may ask for your password — enter it to confirm</p>
                 </div>
             </div>
-            <div class="step">
-                <div class="step-icon">⌥</div>
-                <div class="step-text">
-                    <h3>Double-tap the Option key</h3>
-                    <p>Press the Option (Alt) key twice quickly — KeyFix will instantly convert the last typed word to the correct layout.</p>
-                </div>
-            </div>
-            <div class="step">
-                <div class="step-icon">✨</div>
-                <div class="step-text">
-                    <h3>Text is converted automatically</h3>
-                    <p>KeyFix replaces the mistyped text with the correct version in place — works in any app.</p>
-                </div>
+            <div class="screenshot-placeholder">
+                [ Screenshot: System Settings → Privacy &amp; Security → Accessibility → KeyFix toggled ON ]
             </div>
         </div>
+
+        <!-- Permission 2 -->
+        <div class="perm-block">
+            <div class="perm-header">
+                <div class="perm-title">
+                    <span class="pnum">Permission 2 of 2</span>
+                    Input Monitoring
+                </div>
+                <p>Allows KeyFix to detect what you are typing so it knows what text to convert.</p>
+            </div>
+            <div class="perm-path">
+                ⚙️ System Settings → Privacy &amp; Security → Input Monitoring
+            </div>
+            <div class="perm-steps">
+                <div class="perm-step">
+                    <div class="dot">1</div>
+                    <p>Stay in <strong>Privacy &amp; Security</strong> (same place as above)</p>
+                </div>
+                <div class="perm-step">
+                    <div class="dot">2</div>
+                    <p>Scroll down and click <strong>Input Monitoring</strong></p>
+                </div>
+                <div class="perm-step">
+                    <div class="dot">3</div>
+                    <p>Find <strong>KeyFix</strong> in the list and turn the toggle <strong>ON</strong> (blue)</p>
+                </div>
+                <div class="perm-step">
+                    <div class="dot">4</div>
+                    <p>macOS may ask for your password — enter it to confirm</p>
+                </div>
+            </div>
+            <div class="screenshot-placeholder">
+                [ Screenshot: System Settings → Privacy &amp; Security → Input Monitoring → KeyFix toggled ON ]
+            </div>
+        </div>
+
+        <div class="warn">
+            <span style="font-size:1.3em; flex-shrink:0;">⚠️</span>
+            <p><strong>KeyFix not in the list?</strong> Make sure you have launched KeyFix at least once before opening System Settings. Close System Settings and re-open it — then look again.</p>
+        </div>
+
         <div class="tip">
-            💡 <strong>Tip:</strong> You can customize the hotkey in KeyFix settings — click the ⇄ icon in the menu bar → Settings.
+            <span style="font-size:1.3em; flex-shrink:0;">💡</span>
+            <p>After granting both permissions, you do <strong>not</strong> need to restart your Mac. KeyFix starts working immediately.</p>
         </div>
     </div>
 
-    <!-- SHORTCUTS -->
+    <!-- ── 3. HOW TO USE ───────────────────────────────────── -->
     <div class="section">
-        <h2><span class="num">3</span> Shortcut</h2>
-        <div class="shortcut-grid">
-            <div class="shortcut-card">
-                <div class="keys">⌥ ⌥</div>
-                <div class="label">Double-tap Option — convert last typed word</div>
+        <div class="section-title"><span class="badge">3</span> How to Use</div>
+
+        <div class="hotkey-demo">
+            <div class="hotkey-keys">
+                <div class="key">⌥ Option</div>
+                <div style="color:#374151; font-size:1.2em;">+</div>
+                <div class="key">⌥ Option</div>
+            </div>
+            <p>Double-tap the <strong style="color:#e2e8f0;">Option (Alt)</strong> key to convert the last typed text</p>
+        </div>
+
+        <div class="card" style="margin-top:20px;">
+            <div class="step">
+                <div class="step-num">1</div>
+                <div class="step-body">
+                    <h3>Type something in the wrong layout</h3>
+                    <p>For example, you started typing in Russian but needed English, or vice versa.</p>
+                </div>
+            </div>
+            <div class="step">
+                <div class="step-num">2</div>
+                <div class="step-body">
+                    <h3>Double-tap Option (Alt)</h3>
+                    <p>Press the <strong>Option / Alt</strong> key <strong>twice quickly</strong> — within half a second. You will hear a short beep — that means conversion started.</p>
+                </div>
+            </div>
+            <div class="step">
+                <div class="step-num">3</div>
+                <div class="step-body">
+                    <h3>Text is replaced automatically</h3>
+                    <p>KeyFix deletes the mistyped text and types the corrected version in the same place. Works in any app — browsers, messengers, editors, terminals.</p>
+                </div>
+            </div>
+            <div class="step">
+                <div class="step-num">4</div>
+                <div class="step-body">
+                    <h3>Double-tap again to cycle through layouts</h3>
+                    <p>If the first conversion is not what you wanted, double-tap Option again — KeyFix will convert to the next available layout.</p>
+                </div>
             </div>
         </div>
+
+        <div class="warn" style="margin-top:16px;">
+            <span style="font-size:1.3em; flex-shrink:0;">⚠️</span>
+            <p>
+                <strong>Important:</strong> do not move the cursor with arrow keys, click with the mouse, or press Enter/Escape/Tab <em>between typing and converting</em> — this resets the buffer and KeyFix will have nothing to convert.
+            </p>
+        </div>
+
+        <div class="tip" style="margin-top:12px;">
+            <span style="font-size:1.3em; flex-shrink:0;">💡</span>
+            <p>KeyFix remembers everything you typed in the last <strong>15 seconds</strong>. You can convert even after a long word or full sentence — as long as you did not move the cursor.</p>
+        </div>
     </div>
 
-    <!-- FAQ -->
+    <!-- ── 4. TROUBLESHOOTING ──────────────────────────────── -->
     <div class="section">
-        <h2><span class="num">4</span> FAQ</h2>
+        <div class="section-title"><span class="badge">4</span> Troubleshooting</div>
         <div class="card">
             <div class="faq-item">
-                <h3>KeyFix is not converting text</h3>
-                <p>Make sure Accessibility permission is granted in System Settings → Privacy & Security → Accessibility.</p>
+                <h3>Nothing happens when I double-tap Option</h3>
+                <p>Check that <strong>both permissions</strong> are granted (Accessibility AND Input Monitoring). If one is missing, KeyFix cannot work. Go to System Settings → Privacy &amp; Security and verify both toggles are ON.</p>
             </div>
             <div class="faq-item">
-                <h3>The app doesn't appear in the menu bar</h3>
-                <p>Try relaunching KeyFix from the Applications folder. If your menu bar is full, some icons may be hidden — check with Bartender or similar tools.</p>
+                <h3>I hear a beep but the text is not replaced</h3>
+                <p><strong>Accessibility</strong> permission is missing. KeyFix detected the double-tap (Input Monitoring works) but cannot type the replacement (needs Accessibility). Enable it in System Settings → Privacy &amp; Security → Accessibility.</p>
+            </div>
+            <div class="faq-item">
+                <h3>No beep at all, no reaction</h3>
+                <p><strong>Input Monitoring</strong> permission is missing. KeyFix is not receiving keyboard events. Enable it in System Settings → Privacy &amp; Security → Input Monitoring.</p>
+            </div>
+            <div class="faq-item">
+                <h3>The converted text is wrong</h3>
+                <p>Open the ⇄ menu bar icon → <strong>Settings</strong> and check which layouts are enabled. Make sure only the layouts you actually use are turned on (e.g. English + Russian).</p>
+            </div>
+            <div class="faq-item">
+                <h3>KeyFix does not convert in a specific app</h3>
+                <p>Some apps with strict security restrictions may block key injection. Try the conversion in another app to confirm KeyFix is working correctly.</p>
+            </div>
+            <div class="faq-item">
+                <h3>KeyFix does not appear in the menu bar</h3>
+                <p>Try relaunching KeyFix from the Applications folder. If the menu bar is full, icons may be hidden — drag the ⇄ icon into view while holding ⌘.</p>
             </div>
             <div class="faq-item">
                 <h3>How do I quit KeyFix?</h3>
-                <p>Click the ⇄ icon in the menu bar → Quit KeyFix.</p>
+                <p>Click the <strong>⇄</strong> icon in the menu bar → <strong>Quit KeyFix</strong>.</p>
             </div>
             <div class="faq-item">
                 <h3>Does KeyFix collect any data?</h3>
-                <p>No. KeyFix processes everything locally on your Mac. No data is ever sent anywhere. See our <a href="privacy.html" style="color:#3b82f6;">Privacy Policy</a>.</p>
+                <p>No. All processing happens locally on your Mac. Nothing is ever sent anywhere. See our <a href="privacy.html">Privacy Policy</a>.</p>
             </div>
             <div class="faq-item">
-                <h3>Contact support</h3>
-                <p>Email us at <a href="mailto:kompua@gmail.com" style="color:#3b82f6;">kompua@gmail.com</a></p>
+                <h3>Still not working? Contact us</h3>
+                <p>Email: <a href="mailto:kompua@gmail.com">kompua@gmail.com</a></p>
             </div>
         </div>
     </div>
