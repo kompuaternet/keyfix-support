@@ -89,16 +89,7 @@
 
         .step-body h3 { font-size: 1em; font-weight: 600; color: #e2e8f0; margin-bottom: 5px; }
         .step-body p { font-size: 0.9em; color: #8892b0; }
-        .step-body code {
-            background: #1e2a45;
-            color: #93c5fd;
-            padding: 2px 7px;
-            border-radius: 5px;
-            font-family: monospace;
-            font-size: 0.92em;
-        }
 
-        /* Permission blocks */
         .perm-block {
             background: #161b2e;
             border: 1px solid #1e2a45;
@@ -180,7 +171,6 @@
             text-align: center;
         }
 
-        /* Warning / tip boxes */
         .tip {
             display: flex;
             gap: 14px;
@@ -209,7 +199,6 @@
 
         .warn p, .tip p { margin: 0; line-height: 1.6; }
 
-        /* Hotkey display */
         .hotkey-demo {
             background: #161b2e;
             border: 1px solid #1e2a45;
@@ -239,7 +228,6 @@
 
         .hotkey-demo p { color: #64748b; font-size: 0.9em; }
 
-        /* FAQ */
         .faq-item {
             padding: 20px 24px;
             border-bottom: 1px solid #1e2a45;
@@ -248,6 +236,29 @@
         .faq-item h3 { font-size: 0.95em; color: #c7d2fe; margin-bottom: 6px; }
         .faq-item p { font-size: 0.88em; color: #64748b; }
         .faq-item a { color: #3b82f6; text-decoration: none; }
+
+        .contact-block {
+            background: #161b2e;
+            border: 1px solid #1e2a45;
+            border-radius: 16px;
+            padding: 32px;
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .contact-block p { color: #64748b; font-size: 0.9em; margin-bottom: 12px; }
+
+        .contact-block a {
+            display: inline-block;
+            background: #1e3a8a;
+            color: #93c5fd;
+            text-decoration: none;
+            padding: 10px 28px;
+            border-radius: 10px;
+            font-weight: 600;
+            font-size: 0.95em;
+            transition: background 0.2s;
+        }
 
         footer {
             text-align: center;
@@ -262,14 +273,14 @@
 <body>
 
 <header>
-    <div class="icon">⇄</div>
+    <div class="icon">⌨️</div>
     <h1>KeyFix</h1>
     <p>Keyboard layout converter for macOS</p>
 </header>
 
 <div class="container">
 
-    <!-- ── 1. INSTALLATION ─────────────────────────────────── -->
+    <!-- 1. INSTALLATION -->
     <div class="section">
         <div class="section-title"><span class="badge">1</span> Installation</div>
         <div class="card">
@@ -284,7 +295,7 @@
                 <div class="step-num">2</div>
                 <div class="step-body">
                     <h3>Open the app</h3>
-                    <p>Launch KeyFix from Launchpad or your Applications folder. A <strong>⇄</strong> icon will appear in the menu bar at the top of your screen.</p>
+                    <p>Launch KeyFix from Launchpad or your Applications folder. A keyboard icon will appear in the menu bar at the top of your screen.</p>
                 </div>
             </div>
             <div class="step">
@@ -297,7 +308,7 @@
         </div>
     </div>
 
-    <!-- ── 2. PERMISSIONS ──────────────────────────────────── -->
+    <!-- 2. PERMISSIONS -->
     <div class="section">
         <div class="section-title"><span class="badge">2</span> Required Permissions</div>
 
@@ -321,7 +332,7 @@
             <div class="perm-steps">
                 <div class="perm-step">
                     <div class="dot">1</div>
-                    <p>Open <strong>System Settings</strong> (Apple menu  → System Settings)</p>
+                    <p>Open <strong>System Settings</strong> (Apple menu → System Settings)</p>
                 </div>
                 <div class="perm-step">
                     <div class="dot">2</div>
@@ -391,7 +402,7 @@
         </div>
     </div>
 
-    <!-- ── 3. HOW TO USE ───────────────────────────────────── -->
+    <!-- 3. HOW TO USE -->
     <div class="section">
         <div class="section-title"><span class="badge">3</span> How to Use</div>
 
@@ -437,9 +448,7 @@
 
         <div class="warn" style="margin-top:16px;">
             <span style="font-size:1.3em; flex-shrink:0;">⚠️</span>
-            <p>
-                <strong>Important:</strong> do not move the cursor with arrow keys, click with the mouse, or press Enter/Escape/Tab <em>between typing and converting</em> — this resets the buffer and KeyFix will have nothing to convert.
-            </p>
+            <p><strong>Important:</strong> do not move the cursor with arrow keys, click with the mouse, or press Enter / Escape / Tab between typing and converting — this resets the buffer and KeyFix will have nothing to convert.</p>
         </div>
 
         <div class="tip" style="margin-top:12px;">
@@ -448,7 +457,7 @@
         </div>
     </div>
 
-    <!-- ── 4. TROUBLESHOOTING ──────────────────────────────── -->
+    <!-- 4. TROUBLESHOOTING -->
     <div class="section">
         <div class="section-title"><span class="badge">4</span> Troubleshooting</div>
         <div class="card">
@@ -458,7 +467,7 @@
             </div>
             <div class="faq-item">
                 <h3>I hear a beep but the text is not replaced</h3>
-                <p><strong>Accessibility</strong> permission is missing. KeyFix detected the double-tap (Input Monitoring works) but cannot type the replacement (needs Accessibility). Enable it in System Settings → Privacy &amp; Security → Accessibility.</p>
+                <p><strong>Accessibility</strong> permission is missing. KeyFix detected the double-tap but cannot type the replacement. Enable it in System Settings → Privacy &amp; Security → Accessibility.</p>
             </div>
             <div class="faq-item">
                 <h3>No beep at all, no reaction</h3>
@@ -466,28 +475,34 @@
             </div>
             <div class="faq-item">
                 <h3>The converted text is wrong</h3>
-                <p>Open the ⇄ menu bar icon → <strong>Settings</strong> and check which layouts are enabled. Make sure only the layouts you actually use are turned on (e.g. English + Russian).</p>
+                <p>Click the keyboard icon in the menu bar → <strong>Settings</strong> and check which layouts are enabled. Make sure only the layouts you actually use are turned on (e.g. English + Russian).</p>
             </div>
             <div class="faq-item">
                 <h3>KeyFix does not convert in a specific app</h3>
                 <p>Some apps with strict security restrictions may block key injection. Try the conversion in another app to confirm KeyFix is working correctly.</p>
             </div>
             <div class="faq-item">
-                <h3>KeyFix does not appear in the menu bar</h3>
-                <p>Try relaunching KeyFix from the Applications folder. If the menu bar is full, icons may be hidden — drag the ⇄ icon into view while holding ⌘.</p>
+                <h3>The keyboard icon is not visible in the menu bar</h3>
+                <p>Try relaunching KeyFix from the Applications folder. If the menu bar is full, icons may be hidden — drag the keyboard icon into view while holding ⌘.</p>
+            </div>
+            <div class="faq-item">
+                <h3>The icon looks hollow (not filled)</h3>
+                <p>A hollow keyboard icon means KeyFix is paused. Click it → <strong>Resume</strong> to activate it again.</p>
             </div>
             <div class="faq-item">
                 <h3>How do I quit KeyFix?</h3>
-                <p>Click the <strong>⇄</strong> icon in the menu bar → <strong>Quit KeyFix</strong>.</p>
+                <p>Click the keyboard icon in the menu bar → <strong>Quit KeyFix</strong>.</p>
             </div>
             <div class="faq-item">
                 <h3>Does KeyFix collect any data?</h3>
                 <p>No. All processing happens locally on your Mac. Nothing is ever sent anywhere. See our <a href="privacy.html">Privacy Policy</a>.</p>
             </div>
-            <div class="faq-item">
-                <h3>Still not working? Contact us</h3>
-                <p>Email: <a href="mailto:kompua@gmail.com">kompua@gmail.com</a></p>
-            </div>
+        </div>
+
+        <!-- Contact block -->
+        <div class="contact-block">
+            <p>Still not working? We are happy to help.</p>
+            <a href="mailto:kompua@gmail.com">✉️ &nbsp;kompua@gmail.com</a>
         </div>
     </div>
 
