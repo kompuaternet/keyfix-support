@@ -1,3 +1,5 @@
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -157,20 +159,6 @@
         .perm-step p { font-size: 0.88em; color: #94a3b8; }
         .perm-step p strong { color: #e2e8f0; }
 
-        .screenshot-placeholder {
-            margin: 14px 24px 18px;
-            background: #0d1525;
-            border: 2px dashed #1e2a45;
-            border-radius: 10px;
-            height: 160px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: #374151;
-            font-size: 0.82em;
-            text-align: center;
-        }
-
         .tip {
             display: flex;
             gap: 14px;
@@ -227,6 +215,24 @@
         }
 
         .hotkey-demo p { color: #64748b; font-size: 0.9em; }
+
+        .hotkey-options {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            flex-wrap: wrap;
+            margin: 16px 0 8px;
+        }
+
+        .hotkey-option {
+            background: #1e2a45;
+            border: 1px solid #2a3a5a;
+            border-radius: 8px;
+            padding: 6px 14px;
+            font-size: 0.88em;
+            color: #93c5fd;
+            font-weight: 600;
+        }
 
         .faq-item {
             padding: 20px 24px;
@@ -301,8 +307,8 @@
             <div class="step">
                 <div class="step-num">3</div>
                 <div class="step-body">
-                    <h3>Grant two required permissions</h3>
-                    <p>KeyFix needs exactly two permissions to work. Without both — it will not function. Follow the steps below carefully.</p>
+                    <h3>Grant the required permission</h3>
+                    <p>KeyFix needs one permission to work. Without it — it will not function. Follow the steps below carefully.</p>
                 </div>
             </div>
         </div>
@@ -310,18 +316,17 @@
 
     <!-- 2. PERMISSIONS -->
     <div class="section">
-        <div class="section-title"><span class="badge">2</span> Required Permissions</div>
+        <div class="section-title"><span class="badge">2</span> Required Permission</div>
 
         <p style="color:#64748b; font-size:0.9em; margin-bottom:20px;">
-            KeyFix requires <strong style="color:#e2e8f0;">two</strong> permissions in macOS System Settings.
-            Both must be enabled — if either is missing, the app will not work.
+            KeyFix requires <strong style="color:#e2e8f0;">one</strong> permission in macOS System Settings.
+            It must be enabled — without it, the app will not work.
         </p>
 
         <!-- Permission 1 -->
         <div class="perm-block">
             <div class="perm-header">
                 <div class="perm-title">
-                    <span class="pnum">Permission 1</span>
                     Accessibility
                 </div>
                 <p>Allows KeyFix to automatically delete the mistyped text and type the corrected version.</p>
@@ -353,6 +358,7 @@
             </div>
             <img src="1.png" style="width:100%; display:block; border-radius:10px; margin:14px 0 0;" alt="Accessibility permission">
         </div>
+    </div>
 
     <!-- 3. HOW TO USE -->
     <div class="section">
@@ -360,11 +366,18 @@
 
         <div class="hotkey-demo">
             <div class="hotkey-keys">
-                <div class="key">⌥ Option</div>
+                <div class="key">⌥</div>
                 <div style="color:#374151; font-size:1.2em;">+</div>
-                <div class="key">⌥ Option</div>
+                <div class="key">⌥</div>
             </div>
-            <p>Double-tap the <strong style="color:#e2e8f0;">Option (Alt)</strong> key to convert the last typed text</p>
+            <p>Double-tap your configured trigger key to convert the last typed text</p>
+            <div class="hotkey-options">
+                <div class="hotkey-option">⌥⌥ Option (default)</div>
+                <div class="hotkey-option">⇪⇪ Caps Lock</div>
+                <div class="hotkey-option">⌃⌃ Control</div>
+                <div class="hotkey-option">⌘⌘ Command</div>
+            </div>
+            <p style="margin-top:6px;">Change the trigger in <strong style="color:#e2e8f0;">KeyFix → Settings</strong></p>
         </div>
 
         <div class="card" style="margin-top:20px;">
@@ -378,8 +391,8 @@
             <div class="step">
                 <div class="step-num">2</div>
                 <div class="step-body">
-                    <h3>Double-tap Option (Alt)</h3>
-                    <p>Press the <strong>Option / Alt</strong> key <strong>twice quickly</strong> — within half a second. You will hear a short beep — that means conversion started.</p>
+                    <h3>Double-tap your trigger key</h3>
+                    <p>Press your configured trigger key <strong>twice quickly</strong> — within half a second. You will hear a short beep — that means conversion started.</p>
                 </div>
             </div>
             <div class="step">
@@ -393,7 +406,7 @@
                 <div class="step-num">4</div>
                 <div class="step-body">
                     <h3>Double-tap again to cycle through layouts</h3>
-                    <p>If the first conversion is not what you wanted, double-tap Option again — KeyFix will convert to the next available layout.</p>
+                    <p>If the first conversion is not what you wanted, double-tap again — KeyFix will convert to the next available layout.</p>
                 </div>
             </div>
         </div>
@@ -408,20 +421,22 @@
             <p>KeyFix remembers everything you typed in the last <strong>15 seconds</strong>. You can convert even after a long word or full sentence — as long as you did not move the cursor.</p>
         </div>
     </div>
-<!-- 4. VIDEO -->
-<div class="section">
-    <div class="section-title"><span class="badge">4</span> Video Guide</div>
-    <div style="border-radius:16px; overflow:hidden; border:1px solid #1e2a45;">
-    <iframe width="100%" height="420" src="https://youtu.be/FsEw1N3wocw?si=17RWVGdyfB1rSxkS" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-     </div>
-</div>   
-    <!-- 4. TROUBLESHOOTING -->
+
+    <!-- 4. VIDEO -->
     <div class="section">
-        <div class="section-title"><span class="badge">4</span> Troubleshooting</div>
+        <div class="section-title"><span class="badge">4</span> Video Guide</div>
+        <div style="border-radius:16px; overflow:hidden; border:1px solid #1e2a45;">
+            <iframe width="100%" height="420" src="https://youtu.be/FsEw1N3wocw?si=oFvCN1cM2ANogEc7" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        </div>
+    </div>
+
+    <!-- 5. TROUBLESHOOTING -->
+    <div class="section">
+        <div class="section-title"><span class="badge">5</span> Troubleshooting</div>
         <div class="card">
             <div class="faq-item">
-                <h3>Nothing happens when I double-tap Option</h3>
-                <p>Check that <strong>both permissions</strong> are granted (Accessibility AND Input Monitoring). If one is missing, KeyFix cannot work. Go to System Settings → Privacy &amp; Security and verify both toggles are ON.</p>
+                <h3>Nothing happens when I double-tap the trigger key</h3>
+                <p>Check that <strong>Accessibility</strong> permission is granted. Go to System Settings → Privacy &amp; Security → Accessibility and verify the KeyFix toggle is ON. Also make sure the app is running (keyboard icon should be visible in the menu bar).</p>
             </div>
             <div class="faq-item">
                 <h3>I hear a beep but the text is not replaced</h3>
@@ -429,7 +444,7 @@
             </div>
             <div class="faq-item">
                 <h3>No beep at all, no reaction</h3>
-                <p><strong>Input Monitoring</strong> permission is missing. KeyFix is not receiving keyboard events. Enable it in System Settings → Privacy &amp; Security → Input Monitoring.</p>
+                <p>Make sure KeyFix is running and the keyboard icon is visible in the menu bar. Also check that Accessibility permission is enabled. If you changed the trigger key in Settings, make sure you are using the correct key.</p>
             </div>
             <div class="faq-item">
                 <h3>The converted text is wrong</h3>
@@ -446,6 +461,10 @@
             <div class="faq-item">
                 <h3>The icon looks hollow (not filled)</h3>
                 <p>A hollow keyboard icon means KeyFix is paused. Click it → <strong>Resume</strong> to activate it again.</p>
+            </div>
+            <div class="faq-item">
+                <h3>How do I change the trigger key?</h3>
+                <p>Click the keyboard icon in the menu bar → <strong>Settings</strong> → Trigger Key. Choose between ⌥ Option, ⇪ Caps Lock, ⌃ Control, or ⌘ Command double-tap.</p>
             </div>
             <div class="faq-item">
                 <h3>How do I quit KeyFix?</h3>
